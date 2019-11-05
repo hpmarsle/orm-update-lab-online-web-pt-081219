@@ -32,7 +32,8 @@ class Student
       INSERT INTO students (name, grade)
       VALUES (?, ?)
     SQL
-    student = Student.new(self.name, self.grade)
+    
+    DB[:conn].execute(sql, self.name, self.grade)
     
   end 
 end
